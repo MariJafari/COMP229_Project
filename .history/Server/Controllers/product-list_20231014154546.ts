@@ -36,7 +36,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
       }
   
       // show the edit view with the data
-      res.render('index', {title : 'Edit' , page: 'edit', product: productToEdit , displayName: UserDisplayName(req)});
+      res.json({success: true, message: 'Edit Page Displayed Successfully!', product: productToEdit});
     });
 }
 

@@ -26,8 +26,8 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
 {
     let id = req.params.id;
 
-    // pass the id to the db and read the product into the edit page
-    Product.findById(id, {}, {}, function(err, productToEdit)
+    // pass the id to the db and read the movie into the edit page
+    Product.findById(id, {}, {}, function(err, movieToEdit)
     {
       if(err)
       {
@@ -36,7 +36,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
       }
   
       // show the edit view with the data
-      res.render('index', {title : 'Edit' , page: 'edit', product: productToEdit , displayName: UserDisplayName(req)});
+      res.json({success: true, message: 'Edit Page Displayed Successfully!', product: movieToEdit});
     });
 }
 

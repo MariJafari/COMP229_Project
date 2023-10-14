@@ -11,25 +11,25 @@
     <link rel="stylesheet" href="/Content/app.css">
 </head>
 <body>
-    <!-- Main Navigation Section --> 
+    <!-- Main Navigation Section -->
     <header>
-        <%- include('./components/header.ejs'); %>
+        <%- include('components/header.ejs'); %>
     </header>
 
     <!-- Content Section -->
     <main>
-        <%- include('./content/' + page + '.ejs'); %>
+        <%- include('content/' + page + '.ejs'); %>
     </main>
 
-    <!-- Site-wide Footer Section -->
+     <!-- Site-wide footer Section -->
     <footer>
-        <%- include('./components/footer.ejs'); %>
+       <%- include('components/footer.ejs'); %>
     </footer>
     
     <!-- JavaScript Section -->
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/@fortawesome/fontawesome-free/js/all.min.js"></script>
-    <script src="/Scripts/app.js"></script>
+    <script src="./jquery/dist/jquery.min.js"></script>
+    <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="./Scripts/app.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ export function DisplayProductList(req: express.Request, res: express.Response, 
 
 export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
-    res.render('index', {title : 'Add' , page: 'edit', product: ' ', displayName: UserDisplayName(req)});
+    res.render('index', {title : 'Product' , page: 'edit', product: ' ', displayName: UserDisplayName(req)});
 }
 
 export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
@@ -36,7 +36,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
       }
   
       // show the edit view with the data
-      res.render('index', {title : 'Edit' , page: 'edit', product: productToEdit , displayName: UserDisplayName(req)});
+      res.json({success: true, message: 'Edit Page Displayed Successfully!', product: productToEdit});
     });
 }
 
