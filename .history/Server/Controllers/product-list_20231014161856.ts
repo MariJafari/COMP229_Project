@@ -43,7 +43,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
 
 export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
-  // instantiate a new Product to Add
+  // instantiate a new Movie to Add
   let newProduct = new Product
   ({
     "Name": req.body.productName,
@@ -63,7 +63,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
     }
 
     // new movie has been added -> refresh the movie-list
-    res.redirect('/product-list');
+    res.json({success: true, message: 'Successfully Added Movie', product: newProduct});
   })
 
 
@@ -71,32 +71,6 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
 
 export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
-    let id = req.params.id;
-
-    // instantiate a new Product to Edit
-  let updatedProduct = new Product
-  ({
-    "_id" : id,
-    "Name": req.body.productName,
-    "Description": req.body.productDescription,
-    "Price": req.body.productPrice,
-    "Quantity": req.body.productQuantity,
-    "Category": req.body.productCategory
-  });
-
-   //update product in the database
-   Product.updateOne({_id:id}, updatedProduct, function(err: CallbackError)
-   {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
-    // edit was successful --> go to product-list page
-    res.redirect('/product-list');
-
-   })
 
 }
 

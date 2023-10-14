@@ -93,7 +93,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
       res.end(err);
     }
 
-    // edit was successful --> go to product-list page
+    // new movie has been added -> refresh the movie-list
     res.redirect('/product-list');
 
    })

@@ -73,30 +73,6 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
 {
     let id = req.params.id;
 
-    // instantiate a new Product to Edit
-  let updatedProduct = new Product
-  ({
-    "_id" : id,
-    "Name": req.body.productName,
-    "Description": req.body.productDescription,
-    "Price": req.body.productPrice,
-    "Quantity": req.body.productQuantity,
-    "Category": req.body.productCategory
-  });
-
-   //update product in the database
-   Product.updateOne({_id:id}, updatedProduct, function(err: CallbackError)
-   {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
-    // edit was successful --> go to product-list page
-    res.redirect('/product-list');
-
-   })
 
 }
 

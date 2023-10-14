@@ -32,9 +32,39 @@ function DisplayEditPage(req, res, next) {
 }
 exports.DisplayEditPage = DisplayEditPage;
 function ProcessAddPage(req, res, next) {
+    let newProduct = new product_1.default({
+        "Name": req.body.productName,
+        "Description": req.body.productDescription,
+        "Price": req.body.productPrice,
+        "Quantity": req.body.productQuantity,
+        "Category": req.body.productCategory
+    });
+    product_1.default.create(newProduct, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/product-list');
+    });
 }
 exports.ProcessAddPage = ProcessAddPage;
 function ProcessEditPage(req, res, next) {
+    let id = req.params.id;
+    let updatedProduct = new product_1.default({
+        "_id": id,
+        "Name": req.body.productName,
+        "Description": req.body.productDescription,
+        "Price": req.body.productPrice,
+        "Quantity": req.body.productQuantity,
+        "Category": req.body.productCategory
+    });
+    product_1.default.updateOne({ _id: id }, updatedProduct, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/product-list');
+    });
 }
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessDeletePage(req, res, next) {

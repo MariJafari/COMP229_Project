@@ -85,18 +85,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
   });
 
    //update product in the database
-   Product.updateOne({_id:id}, updatedProduct, function(err: CallbackError)
-   {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
-    // edit was successful --> go to product-list page
-    res.redirect('/product-list');
-
-   })
+   
 
 }
 
