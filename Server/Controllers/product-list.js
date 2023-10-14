@@ -68,6 +68,14 @@ function ProcessEditPage(req, res, next) {
 }
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessDeletePage(req, res, next) {
+    let id = req.params.id;
+    product_1.default.remove({ _id: id }, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/product-list');
+    });
 }
 exports.ProcessDeletePage = ProcessDeletePage;
 //# sourceMappingURL=product-list.js.map

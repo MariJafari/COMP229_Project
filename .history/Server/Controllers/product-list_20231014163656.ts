@@ -112,8 +112,7 @@ export function ProcessDeletePage(req: express.Request, res: express.Response, n
           res.end(err);
         }
 
-        //delete was successful
-        res.redirect('/product-list');
+        //delete
     
     })
    

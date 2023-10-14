@@ -106,15 +106,7 @@ export function ProcessDeletePage(req: express.Request, res: express.Response, n
 
     //pass the id to the database and delete the product
     Product.remove({_id:id}, function(err: CallbackError){
-        if(err)
-        {
-          console.error(err);
-          res.end(err);
-        }
-
-        //delete was successful
-        res.redirect('/product-list');
-    
+        
     })
    
 
