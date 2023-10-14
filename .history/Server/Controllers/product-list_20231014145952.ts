@@ -24,7 +24,7 @@ export function DisplayAddPage(req: express.Request, res: express.Response, next
 
 export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
-    res.render('index', {title : 'Edit' , page: 'edit', product: ' ', displayName: UserDisplayName(req)});
+
 }
 
 export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
