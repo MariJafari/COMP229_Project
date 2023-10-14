@@ -42,6 +42,7 @@ const user_1 = __importDefault(require("../Models/user"));
 const index_1 = __importDefault(require("../Routes/index"));
 const movie_list_1 = __importDefault(require("../Routes/movie-list"));
 const auth_1 = __importDefault(require("../Routes/auth"));
+const product_list_1 = __importDefault(require("../Routes/product-list"));
 const app = (0, express_1.default)();
 const DBConfig = __importStar(require("./db"));
 mongoose_1.default.connect(DBConfig.LocalURI);
@@ -74,6 +75,7 @@ passport_1.default.serializeUser(user_1.default.serializeUser());
 passport_1.default.deserializeUser(user_1.default.deserializeUser());
 app.use('/', index_1.default);
 app.use('/', movie_list_1.default);
+app.use('/', product_list_1.default);
 app.use('/', auth_1.default);
 app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));
