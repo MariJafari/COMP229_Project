@@ -4,7 +4,7 @@ import Movie from '../Models/product';
 
 import { UserDisplayName } from '../Util';
 
-export function DisplayProductList(req: express.Request, res: express.Response, next: express.NextFunction) :void
+export function DisplayProductListPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
     Movie.find(function(err, productCollection)
     {
@@ -32,12 +32,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
 
 }
 
-export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
-{
-
-}
-
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction) :void
+export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
 
 }

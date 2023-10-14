@@ -11,11 +11,7 @@ router.get('/movie-list', AuthGuard, DisplayMovieList);
 
 /*Display Edit Page */
 
-/*Process Add Page */
 
-/*Process Edit Page */
-
-/*Process Delete Page */
 
 export default router;
 

@@ -27,17 +27,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
 
 }
 
-export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
-{
-
-}
-
-export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
-{
-
-}
-
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction) :void
+export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction) :void
 {
 
 }

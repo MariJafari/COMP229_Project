@@ -7,16 +7,6 @@ import { DisplayMovieList } from '../Controllers/movie-list';
 
 router.get('/movie-list', AuthGuard, DisplayMovieList);
 
-/*Display Add Page */
-
-/*Display Edit Page */
-
-/*Process Add Page */
-
-/*Process Edit Page */
-
-/*Process Delete Page */
-
 export default router;
 
-
+/*Dipla

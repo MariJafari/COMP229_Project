@@ -36,8 +36,3 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
 {
 
 }
-
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction) :void
-{
-
-}

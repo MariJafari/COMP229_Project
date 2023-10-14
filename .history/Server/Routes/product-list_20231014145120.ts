@@ -4,25 +4,25 @@ const router = express.Router();
 import { AuthGuard } from '../Util';
 
 //import { DisplayMovieList } from '../Controllers/movie-list';
-import { DisplayAddPage, DisplayEditPage, DisplayProductList, ProcessAddPage, ProcessDeletePage, ProcessEditPage } from '../Controllers/product-list';
+import { DisplayProductList } from '../Controllers/product-list';
 
 //router.get('/movie-list', AuthGuard, DisplayMovieList);
 router.get('/product-list', AuthGuard, DisplayProductList);
 
 /*Display Add Page */
-router.get('/add', AuthGuard, DisplayAddPage);
+router.get('/add', AuthGuard, Disp);
 
 /*Display Edit Page */
-router.get('/edit/:id', AuthGuard, DisplayEditPage);
+router.get('/edit/:id', AuthGuard, DisplayProductList);
 
 /*Process Add Page */
-router.post('/add', AuthGuard, ProcessAddPage);
+router.post('/add', AuthGuard, DisplayProductList);
 
 /*Process Edit Page */
-router.post('/edit/:id', AuthGuard, ProcessEditPage);
+router.post('/edit/:id', AuthGuard, DisplayProductList);
 
 /*Process Delete Page */
-router.get('/delete/:id', AuthGuard, ProcessDeletePage);
+router.get('/delete/:id', AuthGuard, DisplayProductList);
 
 
 export default router;
