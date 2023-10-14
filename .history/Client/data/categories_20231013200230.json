@@ -1,0 +1,18 @@
+{
+    "categories":
+    [
+        {
+            "Name": "Men"
+        },
+        {
+            "Name": "Women"
+         
+        },
+        {
+            "Name": "Everything Everywhere All at Once",
+            "Year": "2022",
+            "Director": "Dan Kwan",
+            "Rating": "5.0 Stars"
+        }
+    ]    
+}
