@@ -30,7 +30,7 @@
                             <td><%= product[count].Quantity %></td>
                             <td><%= product[count].Category %></td>
                             <td class="text-center"><a href="/edit/<%= product[count].id %>" class="btn btn-primary btn btn-sm edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a></td>
-                            <td class="text-center"><a href="/delete/<%= product[count].id %>" class="btn btn-danger btn btn-sm delete"><i class="fa-solid fa-trash-can"></i>Delete</a></td>
+                            <td class="text-center"><a href="/edit/<%= product[count].id %>" class="btn btn-primary btn btn-sm edit"><i class="fa-solid fa-trash-can"></i>Delete</a></td>
                         </tr>
                     <% } %>
                 </tbody>
