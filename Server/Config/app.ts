@@ -24,7 +24,6 @@ import User from '../Models/user';
 
 // import the router data
 import indexRouter from '../Routes/index'; // top-level routes
-import movieListRouter from '../Routes/movie-list'; // movie-list routes
 import authRouter from '../Routes/auth'; // authentication routes
 import productListRouter from '../Routes/product-list'; // product-list routes
 import categoriesListRouter from '../Routes/categories-list'; // categories-list routes
@@ -84,7 +83,6 @@ passport.deserializeUser(User.deserializeUser());
 
 // use routes
 app.use('/', indexRouter);
-app.use('/', movieListRouter);
 app.use('/', productListRouter);
 app.use('/', authRouter);
 app.use('/', categoriesListRouter);
