@@ -35,15 +35,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
             res.end(err);
         }
 
-        const authToken = GenerateToken(user);
-        return res.json({success:true, msg: 'User Login Successfully', user : {
-            id: user._id,
-            DisplayName : user.DisplayName,
-            username: user.username,
-            EmailAddress:  user.EmailAddress
-        }, token:authToken});
+        const authToken = GenerateToken(user)
     });
-        return;
    })(req, res, next);
 }
  

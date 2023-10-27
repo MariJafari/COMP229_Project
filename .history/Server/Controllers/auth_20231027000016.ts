@@ -24,7 +24,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
     // are there login errors?
     if(!user)
     {
-               return res.json({success:false, msg: 'ERROR: Authentication Failed'});
+               return res.json
     // no problems - we have a good username and password
     req.logIn(user, function(err)
     {
@@ -35,15 +35,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
             res.end(err);
         }
 
-        const authToken = GenerateToken(user);
-        return res.json({success:true, msg: 'User Login Successfully', user : {
-            id: user._id,
-            DisplayName : user.DisplayName,
-            username: user.username,
-            EmailAddress:  user.EmailAddress
-        }, token:authToken});
+        return res.redirect('/product-list');
     });
-        return;
    })(req, res, next);
 }
  

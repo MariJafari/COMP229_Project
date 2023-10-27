@@ -40,7 +40,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
             id: user._id,
             DisplayName : user.DisplayName,
             username: user.username,
-            EmailAddress:  user.EmailAddress
+            EmailAddress: = user.EmailAddress
         }, token:authToken});
     });
         return;
