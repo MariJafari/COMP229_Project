@@ -12,7 +12,7 @@ function DisplayProductList(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Product List', page: 'product-list', product: productCollection, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.json({ success: true, msg: 'Product List display Successfully ', product: productCollection, user: req.user });
     });
 }
 exports.DisplayProductList = DisplayProductList;
