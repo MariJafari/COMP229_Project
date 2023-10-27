@@ -44,7 +44,6 @@ let localStrategy = passport_local_1.default.Strategy;
 const user_1 = __importDefault(require("../Models/user"));
 const auth_1 = __importDefault(require("../Routes/auth"));
 const product_list_1 = __importDefault(require("../Routes/product-list"));
-const categories_list_1 = __importDefault(require("../Routes/categories-list"));
 const app = (0, express_1.default)();
 const DBConfig = __importStar(require("./db"));
 mongoose_1.default.connect((DBConfig.RemoteURI) ? DBConfig.RemoteURI : DBConfig.LocalURI);
@@ -89,9 +88,8 @@ let strategy = new JWTStrategy(jwtOptions, function (jwt_payload, done) {
     });
 });
 passport_1.default.use(strategy);
-app.use('/api', product_list_1.default);
 app.use('/api', auth_1.default);
-app.use('/api', categories_list_1.default);
+app.use('/api', passport_1.default.authenticate('jwt', { session: false }), product_list_1.default);
 app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));
 });

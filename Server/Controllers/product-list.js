@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessFindProductsByKeyword = exports.ProcessDeletePage = exports.ProcessEditPage = exports.ProcessAddPage = exports.DisplayEditPage = exports.DisplayAddPage = exports.DisplayProductList = void 0;
 const product_1 = __importDefault(require("../Models/product"));
-const Util_1 = require("../Util");
 function DisplayProductList(req, res, next) {
     product_1.default.find(function (err, productCollection) {
         if (err) {
@@ -17,7 +16,7 @@ function DisplayProductList(req, res, next) {
 }
 exports.DisplayProductList = DisplayProductList;
 function DisplayAddPage(req, res, next) {
-    res.render('index', { title: 'Add', page: 'edit', product: ' ', displayName: (0, Util_1.UserDisplayName)(req) });
+    res.json({ success: true, msg: 'Add Page  display Successfully ' });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function DisplayEditPage(req, res, next) {
@@ -27,7 +26,7 @@ function DisplayEditPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Edit', page: 'edit', product: productToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.json({ success: true, msg: 'Edit Page Displayed Successfully ', product: productToEdit });
     });
 }
 exports.DisplayEditPage = DisplayEditPage;
@@ -44,7 +43,7 @@ function ProcessAddPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/product-list');
+        res.json({ success: true, msg: 'Successfully Added Product', product: newProduct });
     });
 }
 exports.ProcessAddPage = ProcessAddPage;
@@ -63,7 +62,7 @@ function ProcessEditPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/product-list');
+        res.json({ success: true, msg: 'Successfully Updated Product', product: updatedProduct });
     });
 }
 exports.ProcessEditPage = ProcessEditPage;
@@ -74,7 +73,7 @@ function ProcessDeletePage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/product-list');
+        res.json({ success: true, msg: 'Successfully Deleted Product' });
     });
 }
 exports.ProcessDeletePage = ProcessDeletePage;
