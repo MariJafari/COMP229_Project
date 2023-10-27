@@ -25,7 +25,6 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
     if(!user)
     {
                return res.json({success:false, msg: 'ERROR: Authentication Failed'});
-    }
     // no problems - we have a good username and password
     req.logIn(user, function(err)
     {
@@ -37,13 +36,13 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
         }
 
         const authToken = GenerateToken(user);
-        return res.json({success:true, msg: 'User Logged In Successfully', user :
+        return res.json({success:true, msg: 'User Login Successfully', user :
         {
             id: user._id,
             DisplayName : user.DisplayName,
             username: user.username,
             EmailAddress:  user.EmailAddress
-        }, token:authToken });
+        }, token:authToken});
     });
         return;
    })(req, res, next);
@@ -66,20 +65,24 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
             if(err.name == "UserExistsError")
             {
                 console.error('ERROR: User Already Exists!');
-             
+                req.flash('registerMessage', 'Registration Error!');
             }
             else
             {
                 console.error(err.name); // other error
-               
+                req.flash('registerMessage', 'Server Error');
             }
-            return res.json({success: false,msg : 'ERROR: Registration Failed'});
-
+            return res.redirect('/register');
         }
-      
-        // everything is ok - user has been registered
-        return res.json({success: true, msg: 'User Registered Successfully'});
 
+        // everything is ok - user has been registered
+
+        // automatically login the user
+        return passport.authenticate('local')(req, res, function()
+        {
+            //return res.redirect('/movie-list');
+            return res.redirect('/product-list');
+        });
     });
 }
 

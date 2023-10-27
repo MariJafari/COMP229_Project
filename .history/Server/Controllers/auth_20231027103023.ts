@@ -66,20 +66,24 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
             if(err.name == "UserExistsError")
             {
                 console.error('ERROR: User Already Exists!');
-             
+                req.flash('registerMessage', 'Registration Error!');
             }
             else
             {
                 console.error(err.name); // other error
-               
+                req.flash('registerMessage', 'Server Error');
             }
-            return res.json({success: false,msg : 'ERROR: Registration Failed'});
-
+            return res.redirect('/register');
         }
-      
-        // everything is ok - user has been registered
-        return res.json({success: true, msg: 'User Registered Successfully'});
 
+        // everything is ok - user has been registered
+
+        // automatically login the user
+        return passport.authenticate('local')(req, res, function()
+        {
+            //return res.redirect('/movie-list');
+            return res.redirect('/product-list');
+        });
     });
 }
 

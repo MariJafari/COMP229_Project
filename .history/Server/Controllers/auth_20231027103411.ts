@@ -78,8 +78,14 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
         }
       
         // everything is ok - user has been registered
-        return res.json({success: true, msg: 'User Registered Successfully'});
+        return res.json()
 
+        // automatically login the user
+        return passport.authenticate('local')(req, res, function()
+        {
+            //return res.redirect('/movie-list');
+            return res.redirect('/product-list');
+        });
     });
 }
 
