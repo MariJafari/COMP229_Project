@@ -26,7 +26,8 @@ function ProcessLoginPage(req, res, next) {
                     id: user._id,
                     DisplayName: user.DisplayName,
                     username: user.username,
-                    EmailAddress: user.EmailAddress
+                    EmailAddress: user.EmailAddress,
+                    Password: user.Password
                 }, token: authToken });
         });
         return;

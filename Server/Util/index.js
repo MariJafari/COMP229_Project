@@ -49,7 +49,7 @@ function GenerateToken(user) {
         id: user._id,
         DisplayName: user.DisplayName,
         username: user.username,
-        EmailAddress: user.EmailAddress
+        EmailAddress: user.EmailAddress,
     };
     const jwtOptions = {
         expiresIn: 604800

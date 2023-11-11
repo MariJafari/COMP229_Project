@@ -1,0 +1,25 @@
+{
+    "books":
+    [
+        {
+            "ISBN":"9780135863336" ,
+            "Title":"Fundamentals of Web Development" ,
+            "Author": "Randy Connolly, Ricardo Hoar" ,
+            "Genre": { "$date": "2023-11-08T12:00:00Z" },
+            "Year": "2021"
+        },
+        {   "ISBN":"Karen Dela Cruz" ,
+            "Title":"kdelac14@my.centennialcollege.ca" ,
+            "Author": "123456" ,
+            "Genre": { "$date": "2023-11-08T12:00:00Z" },
+            "Year": { "$date": "2023-11-08T12:00:00Z" }
+        },
+        {
+            "ISBN":"Karen Dela Cruz" ,
+            "Title":"kdelac14@my.centennialcollege.ca" ,
+            "Author": "123456" ,
+            "Genre": { "$date": "2023-11-08T12:00:00Z" },
+            "Year": { "$date": "2023-11-08T12:00:00Z" }
+        }
+    ]    
+}
